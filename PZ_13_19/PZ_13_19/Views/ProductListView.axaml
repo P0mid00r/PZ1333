@@ -1,0 +1,62 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:vm="clr-namespace:PZ_13_19.ViewModels"
+			 x:DataType="vm:MainViewModel"
+             x:Class="PZ_13_19.Views.ProductListView"
+			 Background="White">
+	
+	<Grid RowDefinitions="80, *" ColumnDefinitions="">
+		<Grid ColumnDefinitions="*,*">
+		<Border Grid.Row="0" Grid.ColumnSpan="2" Background="#76E383" CornerRadius="25" Margin="10"/>
+			<StackPanel Orientation="Horizontal" Grid.Column="0" Margin="20,0,0,0">
+				<Button Content="Добавить" x:Name="buttonAdd" Foreground="Black" Background="#498C51" FontFamily="Comic Sans MS"/>
+				<Button Content="Удалить" x:Name="buttonDelete" Foreground="Black" Background="#498C51" FontFamily="Comic Sans MS"/>
+				<Button Content="Выход" x:Name="buttonExit" Foreground="Black" Background="#498C51" FontFamily="Comic Sans MS"/>
+			</StackPanel>
+			<TextBlock Grid.Column="1"
+					   HorizontalAlignment="Right"
+					   VerticalAlignment="Center"
+					   Margin="20"
+					   FontSize="20"
+					   TextWrapping="Wrap"
+					   Foreground="#498C51"
+					   FontFamily="Comic Sans MS"
+					   Text="{Binding Path=UserEnter.FIO}"/>
+		</Grid>
+		<Border Grid.Row="1" Background="#76E383" CornerRadius="25" Margin="10"/>
+		<ListBox Grid.Row="1" ItemsSource="{Binding Products}" Background="Transparent" x:Name="productListBox">
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<Grid Margin="10">
+						<Border  Background="#498C51" CornerRadius="25"/>
+
+						<StackPanel Orientation="Horizontal">
+							<Image Width="100" Source="/Assets/avalonia-logo.ico"/>
+
+							<StackPanel VerticalAlignment="Center">
+								<TextBlock Text="{Binding Name}"/>
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Text="Описание: "/>
+									<TextBlock Text="{Binding Description}"/>
+								</StackPanel>
+								<StackPanel Orientation="Horizontal">
+									<TextBlock Text="Цена: "/>
+									<TextBlock Text="{Binding Price}"/>
+								</StackPanel>
+							</StackPanel>
+
+							<StackPanel Orientation="Horizontal" Margin="15,0,0,0" VerticalAlignment="Center">
+								<TextBlock Text="Количество: "/>
+								<TextBlock Text="{Binding Count}"/>
+							</StackPanel>
+
+						</StackPanel>
+					</Grid>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+	</Grid>
+</UserControl>

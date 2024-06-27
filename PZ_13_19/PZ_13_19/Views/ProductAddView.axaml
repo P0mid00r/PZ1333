@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="PZ_13_19.Views.ProductAddView"
+			 Background="White">
+	<Grid>
+		<Border Background="#76E383" CornerRadius="25" Margin="30"/>
+		<Button Content="X"
+					Click="ButtonClose_Click"
+					FontSize="40"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Top"
+					Margin="50"
+					Background="Transparent"/>
+		<Grid ColumnDefinitions="*,300,*"
+						 RowDefinitions="*,*,*">
+			<TextBlock Grid.Column="1"
+					   Text="Добавление товара"
+					   HorizontalAlignment="Center"
+					   VerticalAlignment="Bottom"
+					   Foreground="#498C51"
+					   FontFamily="Comic Sans MS"
+					   FontSize="30"
+					   Margin="10"/>
+			<StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
+				<TextBlock Text="Название" Foreground="Black" FontFamily="Comic Sans MS"/>
+				<TextBox x:Name="nameTextBlock"/>
+
+				<TextBlock Text="Описание" Foreground="Black" FontFamily="Comic Sans MS"/>
+				<TextBox x:Name="descriptionTextBlock"/>
+
+				<TextBlock Text="Цена" Foreground="Black" FontFamily="Comic Sans MS"/>
+				<TextBox x:Name="priceTextBlock"/>
+
+				<TextBlock Text="Количество" Foreground="Black" FontFamily="Comic Sans MS"/>
+				<TextBox x:Name="countTextBlock"/>
+				<Button Margin="10" Content="Добавить" Click="ButtonAddProduct_Click" Foreground="Black" Background="#498C51" FontFamily="Comic Sans MS" HorizontalAlignment="Center"/>
+			</StackPanel>
+		</Grid>
+	</Grid>
+</UserControl>

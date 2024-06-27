@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="PZ_13_19.Views.RegistrationView"
+			 Background="White">
+
+	<Grid>
+		<Border Background="#76E383" CornerRadius="25" Margin="30"/>
+		<Button Content="X"
+					Click="ButtonClose_Click"
+					FontSize="40"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Top"
+					Margin="50"
+					Background="Transparent"/>
+		<Grid ColumnDefinitions="*,300,*"
+						 RowDefinitions="*,*,*">
+
+			<TextBlock Grid.Column="1"
+					   Text="Регистрация"
+					   HorizontalAlignment="Center"
+					   VerticalAlignment="Bottom"
+					   Foreground="#498C51"
+					   FontFamily="Comic Sans MS"
+					   FontSize="30"/>
+			
+			<StackPanel Grid.Column="1" Grid.Row="1" VerticalAlignment="Center">
+				<TextBlock Text="ФИО" Foreground="Black" FontFamily="Comic Sans MS"/>
+				<TextBox x:Name="fioTextBlock" Text=""/>
+				
+				<TextBlock Text="Логин" Foreground="Black" FontFamily="Comic Sans MS"/>
+				<TextBox x:Name="loginTextBlock" Text=""/>
+
+				<TextBlock Text="Пароль" Foreground="Black" FontFamily="Comic Sans MS"/>
+				<TextBox x:Name="passwordTextBlock" Text=""/>
+
+				<TextBlock Text="Доступ" Foreground="Black" FontFamily="Comic Sans MS"/>
+				<ComboBox Name="comboBoxAccess" SelectedIndex="0">
+					<ComboBoxItem Content="User"/>
+					<ComboBoxItem Content="Admin"/>
+				</ComboBox>
+				<Button Margin="10" Content="Зарегистрироваться" Click="ButtonRegistration_Click" Foreground="Black" Background="#498C51" FontFamily="Comic Sans MS" HorizontalAlignment="Center"/>
+			</StackPanel>
+			
+		</Grid>
+
+	</Grid>
+	
+</UserControl>
